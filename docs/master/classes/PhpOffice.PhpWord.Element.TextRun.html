@@ -294,6 +294,18 @@
     </li>
 
                                                                                                         <li class="method public inherited">
+        <a href="#method_getCommentRangeEnd" title="getCommentRangeEnd :: Get comment end">
+            <span class="description">Get comment end</span><pre>getCommentRangeEnd</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_getCommentRangeStart" title="getCommentRangeStart :: Get comment start">
+            <span class="description">Get comment start</span><pre>getCommentRangeStart</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
         <a href="#method_getDocPart" title="getDocPart :: Get doc part">
             <span class="description">Get doc part</span><pre>getDocPart</pre>
         </a>
@@ -360,6 +372,18 @@
     </li>
 
                                                                                                                                                                 <li class="method public inherited">
+        <a href="#method_setCommentRangeEnd" title="setCommentRangeEnd :: Set comment end">
+            <span class="description">Set comment end</span><pre>setCommentRangeEnd</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_setCommentRangeStart" title="setCommentRangeStart :: Set comment start">
+            <span class="description">Set comment start</span><pre>setCommentRangeStart</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
         <a href="#method_setDocPart" title="setDocPart :: Set doc part.">
             <span class="description">Set doc part.</span><pre>setDocPart</pre>
         </a>
@@ -377,7 +401,13 @@
         </a>
     </li>
 
-                                                                                                                                                                                                                                                                                <li class="method public inherited">
+                                                                                                                                                                                                                                                                                <li class="method public">
+        <a href="#method_setParagraphStyle" title="setParagraphStyle :: Set Paragraph style">
+            <span class="description">Set Paragraph style</span><pre>setParagraphStyle</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
         <a href="#method_setParentContainer" title="setParentContainer :: Set parent container">
             <span class="description">Set parent container</span><pre>setParentContainer</pre>
         </a>
@@ -404,7 +434,7 @@
                                 <span class="description">Add element</span><pre>addElement</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="method protected inherited">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    <li class="method protected inherited">
                             <a href="#method_setEnumVal" title="setEnumVal :: Set enum value">
                                 <span class="description">Set enum value</span><pre>setEnumVal</pre>
                             </a>
@@ -414,7 +444,7 @@
                                 <span class="description">Set new style value</span><pre>setNewStyle</pre>
                             </a>
                         </li>
-                                                                                                                                                            </ul>
+                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
@@ -423,7 +453,7 @@
                                 <span class="description">Check if a method is allowed for the current container</span><pre>checkValidity</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                                                                                                                                <li class="method private inherited">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method private inherited">
                             <a href="#method_getMediaPart" title="getMediaPart :: Return media element (image, object, link) container name">
                                 <span class="description">Return media element (image, object, link) container name</span><pre>getMediaPart</pre>
                             </a>
@@ -433,12 +463,12 @@
                                 <span class="description">Set relation Id for elements that will be registered in the Collection subnamespaces.</span><pre>setCollectionRelation</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                <li class="method private inherited">
+                                                                                                                                                                                                                                                                                                        <li class="method private inherited">
                             <a href="#method_setMediaRelation" title="setMediaRelation :: Set relation Id for media elements (link, image, object; legacy of OOXML)">
                                 <span class="description">Set relation Id for media elements (link, image, object; legacy of OOXML)</span><pre>setMediaRelation</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -708,7 +738,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                             
                             <div class="row collapse">
                                 <div class="detail-description">
-                                    <div class="long_description"><p>, array $options = array())</p></div>
+                                    <div class="long_description"><p>, array $options = array(), mixed $text = null)</p></div>
 
                                     <table class="table">
                                                                                                                     </table>
@@ -856,7 +886,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_addLink"></a>
                         <div class="element clickable method public  method_addLink inherited" data-toggle="collapse" data-target=".method_addLink .collapse">
                             <h2>addLink</h2>
-                            <pre>addLink(string $target, string $text = null, mixed $fStyle = null, mixed $pStyle = null) : \PhpOffice\PhpWord\Element\Link</pre>
+                            <pre>addLink(string $target, string $text = null, mixed $fStyle = null, mixed $pStyle = null, boolean $internal = false) : \PhpOffice\PhpWord\Element\Link</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -884,6 +914,10 @@ add the model in the class docblock with <code>@method</code>.</p>
                                                                                     <div class="subelement argument">
                                                 <h4>$pStyle</h4>
                                                 <code>mixed</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$internal</h4>
+                                                <code>boolean</code><p></p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
@@ -973,7 +1007,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_addObject"></a>
                         <div class="element clickable method public  method_addObject inherited" data-toggle="collapse" data-target=".method_addObject .collapse">
                             <h2>addObject</h2>
-                            <pre>addObject(string $source, mixed $style = null) : Object</pre>
+                            <pre>addObject(string $source, mixed $style = null) : \PhpOffice\PhpWord\Element\Object</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -996,7 +1030,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code>Object</code><p></p>
+                                        <code>\PhpOffice\PhpWord\Element\Object</code><p></p>
                                                                     </div>
                             </div>
 
@@ -1490,6 +1524,64 @@ add the model in the class docblock with <code>@method</code>.</p>
                             </div>
 
                         </div>
+                                            <a id="method_getCommentRangeEnd"></a>
+                        <div class="element clickable method public  method_getCommentRangeEnd inherited" data-toggle="collapse" data-target=".method_getCommentRangeEnd .collapse">
+                            <h2>Get comment end</h2>
+                            <pre>getCommentRangeEnd() : \PhpOffice\PhpWord\Element\Comment</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/PhpOffice.PhpWord.Element.Comment.html">\PhpOffice\PhpWord\Element\Comment</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getCommentRangeStart"></a>
+                        <div class="element clickable method public  method_getCommentRangeStart inherited" data-toggle="collapse" data-target=".method_getCommentRangeStart .collapse">
+                            <h2>Get comment start</h2>
+                            <pre>getCommentRangeStart() : \PhpOffice\PhpWord\Element\Comment</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/PhpOffice.PhpWord.Element.Comment.html">\PhpOffice\PhpWord\Element\Comment</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_getDocPart"></a>
                         <div class="element clickable method public  method_getDocPart inherited" data-toggle="collapse" data-target=".method_getDocPart .collapse">
                             <h2>Get doc part</h2>
@@ -1551,7 +1643,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_getElementId"></a>
                         <div class="element clickable method public  method_getElementId inherited" data-toggle="collapse" data-target=".method_getElementId .collapse">
                             <h2>Get element unique ID</h2>
-                            <pre>getElementId() : string</pre>
+                            <pre>getElementId() : integer</pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1572,7 +1664,7 @@ add the model in the class docblock with <code>@method</code>.</p>
 
                                     
                                                                             <h3>Response</h3>
-                                        <code>string</code><p></p>
+                                        <code>integer</code><p></p>
                                                                     </div>
                             </div>
 
@@ -1619,15 +1711,6 @@ add the model in the class docblock with <code>@method</code>.</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    codeCoverageIgnore
-                                                </th>
-                                                <td>
-                                                                                                                                                                        
-                                                                                                                                                                        
-                                                                                                    </td>
-                                            </tr>
                                                                                     <tr>
                                                 <th>
                                                     
@@ -1850,7 +1933,41 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_setCollectionRelation"></a>
                         <div class="element clickable method private  method_setCollectionRelation inherited" data-toggle="collapse" data-target=".method_setCollectionRelation .collapse">
                             <h2>Set relation Id for elements that will be registered in the Collection subnamespaces.</h2>
-                            <pre>setCollectionRelation() : void</pre>
+                            <pre>setCollectionRelation() </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                    
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setCommentRangeEnd"></a>
+                        <div class="element clickable method public  method_setCommentRangeEnd inherited" data-toggle="collapse" data-target=".method_setCommentRangeEnd .collapse">
+                            <h2>Set comment end</h2>
+                            <pre>setCommentRangeEnd(\PhpOffice\PhpWord\Element\Comment $value) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1869,15 +1986,20 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             </tr>
                                                                                                                     </table>
 
-                                    
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code><a href="../classes/PhpOffice.PhpWord.Element.Comment.html">\PhpOffice\PhpWord\Element\Comment</a></code><p></p>
+                                            </div>
+                                                                            
                                                                     </div>
                             </div>
 
                         </div>
-                                            <a id="method_setDocPart"></a>
-                        <div class="element clickable method public  method_setDocPart inherited" data-toggle="collapse" data-target=".method_setDocPart .collapse">
-                            <h2>Set doc part.</h2>
-                            <pre>setDocPart(string $docPart, integer $docPartId = 1) : void</pre>
+                                            <a id="method_setCommentRangeStart"></a>
+                        <div class="element clickable method public  method_setCommentRangeStart inherited" data-toggle="collapse" data-target=".method_setCommentRangeStart .collapse">
+                            <h2>Set comment start</h2>
+                            <pre>setCommentRangeStart(\PhpOffice\PhpWord\Element\Comment $value) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1887,6 +2009,45 @@ add the model in the class docblock with <code>@method</code>.</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$value</h4>
+                                                <code><a href="../classes/PhpOffice.PhpWord.Element.Comment.html">\PhpOffice\PhpWord\Element\Comment</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_setDocPart"></a>
+                        <div class="element clickable method public  method_setDocPart inherited" data-toggle="collapse" data-target=".method_setDocPart .collapse">
+                            <h2>Set doc part.</h2>
+                            <pre>setDocPart(string $docPart, integer $docPartId = 1) </pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -1906,7 +2067,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_setElementId"></a>
                         <div class="element clickable method public  method_setElementId inherited" data-toggle="collapse" data-target=".method_setElementId .collapse">
                             <h2>Set element unique ID from 6 first digit of md5.</h2>
-                            <pre>setElementId() : void</pre>
+                            <pre>setElementId() </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1916,6 +2077,13 @@ add the model in the class docblock with <code>@method</code>.</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                     <tr>
                                                 <th>
                                                     
@@ -1933,7 +2101,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_setElementIndex"></a>
                         <div class="element clickable method public  method_setElementIndex inherited" data-toggle="collapse" data-target=".method_setElementIndex .collapse">
                             <h2>Set element index.</h2>
-                            <pre>setElementIndex(integer $value) : void</pre>
+                            <pre>setElementIndex(integer $value) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -1943,6 +2111,13 @@ add the model in the class docblock with <code>@method</code>.</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -2011,7 +2186,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_setMediaRelation"></a>
                         <div class="element clickable method private  method_setMediaRelation inherited" data-toggle="collapse" data-target=".method_setMediaRelation .collapse">
                             <h2>Set relation Id for media elements (link, image, object; legacy of OOXML)</h2>
-                            <pre>setMediaRelation() : void</pre>
+                            <pre>setMediaRelation() </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2024,6 +2199,13 @@ add the model in the class docblock with <code>@method</code>.</p>
 </ul></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                     <tr>
                                                 <th>
                                                     
@@ -2073,10 +2255,37 @@ add the model in the class docblock with <code>@method</code>.</p>
                             </div>
 
                         </div>
+                                            <a id="method_setParagraphStyle"></a>
+                        <div class="element clickable method public  method_setParagraphStyle" data-toggle="collapse" data-target=".method_setParagraphStyle .collapse">
+                            <h2>Set Paragraph style</h2>
+                            <pre>setParagraphStyle(string|array|\PhpOffice\PhpWord\Style\Paragraph $style = null) : string|\PhpOffice\PhpWord\Style\Paragraph</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$style</h4>
+                                                <code>string|array|<a href="../classes/PhpOffice.PhpWord.Style.Paragraph.html">\PhpOffice\PhpWord\Style\Paragraph</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>string|<a href="../classes/PhpOffice.PhpWord.Style.Paragraph.html">\PhpOffice\PhpWord\Style\Paragraph</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_setParentContainer"></a>
                         <div class="element clickable method public  method_setParentContainer inherited" data-toggle="collapse" data-target=".method_setParentContainer .collapse">
                             <h2>Set parent container</h2>
-                            <pre>setParentContainer(\PhpOffice\PhpWord\Element\AbstractElement $container) : void</pre>
+                            <pre>setParentContainer(\PhpOffice\PhpWord\Element\AbstractElement $container) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2086,6 +2295,13 @@ add the model in the class docblock with <code>@method</code>.</p>
                                     <div class="long_description"><p>Passed parameter should be a container, except for Table (contain Row) and Row (contain Cell)</p></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -2101,7 +2317,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_setPhpWord"></a>
                         <div class="element clickable method public  method_setPhpWord inherited" data-toggle="collapse" data-target=".method_setPhpWord .collapse">
                             <h2>Set PhpWord as reference.</h2>
-                            <pre>setPhpWord(\PhpOffice\PhpWord\PhpWord $phpWord = null) : void</pre>
+                            <pre>setPhpWord(\PhpOffice\PhpWord\PhpWord $phpWord = null) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2111,6 +2327,13 @@ add the model in the class docblock with <code>@method</code>.</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -2126,7 +2349,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                             <a id="method_setRelationId"></a>
                         <div class="element clickable method public  method_setRelationId inherited" data-toggle="collapse" data-target=".method_setRelationId .collapse">
                             <h2>Set relation Id.</h2>
-                            <pre>setRelationId(integer $value) : void</pre>
+                            <pre>setRelationId(integer $value) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -2136,6 +2359,13 @@ add the model in the class docblock with <code>@method</code>.</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -2153,7 +2383,7 @@ add the model in the class docblock with <code>@method</code>.</p>
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
                                                     <a id="property_container"> </a>
                             <div class="element clickable property  protected property_container inherited" data-toggle="collapse" data-target=".property_container .collapse">
-                                <h2>Container type Section|Header|Footer|Footnote|Endnote|Cell|TextRun|TextBox|ListItemRun</h2>
+                                <h2>Container type Section|Header|Footer|Footnote|Endnote|Cell|TextRun|TextBox|ListItemRun|TrackChange</h2>
                                 <pre>container : string</pre>
                                 <div class="labels">
                                     <span class="label">inherited</span>                                                                    </div>
@@ -2366,7 +2596,7 @@ AUTO, FIRST, and EVEN (AUTO = ODD)</p></div>
                                                     <a id="property_elementId"> </a>
                             <div class="element clickable property  protected property_elementId inherited" data-toggle="collapse" data-target=".property_elementId .collapse">
                                 <h2>Unique Id for element</h2>
-                                <pre>elementId : integer</pre>
+                                <pre>elementId : string</pre>
                                 <div class="labels">
                                     <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
@@ -2385,7 +2615,7 @@ AUTO, FIRST, and EVEN (AUTO = ODD)</p></div>
                                                                                     </table>
 
                                                                                     <h3>Type(s)</h3>
-                                            <code>integer</code>
+                                            <code>string</code>
                                                                             </div>
                                 </div>
                             </div>
@@ -2495,7 +2725,7 @@ AUTO, FIRST, and EVEN (AUTO = ODD)</p></div>
                             </div>
                                                     <a id="property_collectionRelation"> </a>
                             <div class="element clickable property  protected property_collectionRelation inherited" data-toggle="collapse" data-target=".property_collectionRelation .collapse">
-                                <h2>Is part of collection; true for Title, Footnote, Endnote, and Chart</h2>
+                                <h2>Is part of collection; true for Title, Footnote, Endnote, Chart, and Comment</h2>
                                 <pre>collectionRelation : boolean</pre>
                                 <div class="labels">
                                     <span class="label">inherited</span>                                                                    </div>
@@ -2519,6 +2749,58 @@ AUTO, FIRST, and EVEN (AUTO = ODD)</p></div>
                                                                             </div>
                                 </div>
                             </div>
+                                                    <a id="property_commentRangeStart"> </a>
+                            <div class="element clickable property  protected property_commentRangeStart inherited" data-toggle="collapse" data-target=".property_commentRangeStart .collapse">
+                                <h2>The start position for the linked comment</h2>
+                                <pre>commentRangeStart : \PhpOffice\PhpWord\Element\Comment</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/PhpOffice.PhpWord.Element.Comment.html">\PhpOffice\PhpWord\Element\Comment</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
+                                                    <a id="property_commentRangeEnd"> </a>
+                            <div class="element clickable property  protected property_commentRangeEnd inherited" data-toggle="collapse" data-target=".property_commentRangeEnd .collapse">
+                                <h2>The end position for the linked comment</h2>
+                                <pre>commentRangeEnd : \PhpOffice\PhpWord\Element\Comment</pre>
+                                <div class="labels">
+                                    <span class="label">inherited</span>                                                                    </div>
+                                <div class="row collapse">
+                                    <div class="detail-description">
+                                        <div class="long_description"></div>
+
+                                        <table class="table">
+                                                                                            <tr>
+                                                    <th>
+                                                        var
+                                                    </th>
+                                                    <td>
+                                                                                                                    
+                                                                                                            </td>
+                                                </tr>
+                                                                                    </table>
+
+                                                                                    <h3>Type(s)</h3>
+                                            <code><a href="../classes/PhpOffice.PhpWord.Element.Comment.html">\PhpOffice\PhpWord\Element\Comment</a></code>
+                                                                            </div>
+                                </div>
+                            </div>
                                                             </div>
             </div>
             <a id="\PhpOffice\PhpWord\Element\TextRun"></a>
@@ -2539,7 +2821,7 @@ AUTO, FIRST, and EVEN (AUTO = ODD)</p></div>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Tue, 11 Jul 2017 00:28:58 +0000.<br/>
+            generated on Mon, 25 Dec 2017 00:56:55 +0000.<br/>
     </footer>
     </body>
 </html>

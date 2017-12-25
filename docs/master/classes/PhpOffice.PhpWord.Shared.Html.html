@@ -125,25 +125,35 @@
         </a>
     </li>
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                        <li class="method protected">
+                                                                                                                                                                                                                                                                                                    <li class="method protected">
                             <a href="#method_parseInlineStyle" title="parseInlineStyle :: parse Inline style of a node">
                                 <span class="description">parse Inline style of a node</span><pre>parseInlineStyle</pre>
                             </a>
                         </li>
-                                                                                                                                                        <li class="method protected">
+                                                                                                                                                                                            <li class="method protected">
                             <a href="#method_parseNode" title="parseNode :: Parse a node and add a corresponding element to the parent element.">
                                 <span class="description">Parse a node and add a corresponding element to the parent element.</span><pre>parseNode</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
                                                                                                                 <li class="method private">
+                            <a href="#method_mapBorderStyle" title="mapBorderStyle :: Transforms a CSS border style into a word border style">
+                                <span class="description">Transforms a CSS border style into a word border style</span><pre>mapBorderStyle</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_parseCell" title="parseCell :: Parse table cell">
+                                <span class="description">Parse table cell</span><pre>parseCell</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
                             <a href="#method_parseChildNodes" title="parseChildNodes :: Parse child nodes.">
                                 <span class="description">Parse child nodes.</span><pre>parseChildNodes</pre>
                             </a>
@@ -153,7 +163,17 @@
                                 <span class="description">Parse heading node</span><pre>parseHeading</pre>
                             </a>
                         </li>
+                                                                                <li class="method private">
+                            <a href="#method_parseImage" title="parseImage :: Parse image node">
+                                <span class="description">Parse image node</span><pre>parseImage</pre>
+                            </a>
+                        </li>
                                                                                                                     <li class="method private">
+                            <a href="#method_parseLineBreak" title="parseLineBreak :: Parse line break">
+                                <span class="description">Parse line break</span><pre>parseLineBreak</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
                             <a href="#method_parseList" title="parseList :: Parse list node">
                                 <span class="description">Parse list node</span><pre>parseList</pre>
                             </a>
@@ -174,6 +194,16 @@
                             </a>
                         </li>
                                                                                 <li class="method private">
+                            <a href="#method_parseRow" title="parseRow :: Parse a table row">
+                                <span class="description">Parse a table row</span><pre>parseRow</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_parseSpan" title="parseSpan :: Parse span node">
+                                <span class="description">Parse span node</span><pre>parseSpan</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
                             <a href="#method_parseStyle" title="parseStyle :: Parse style">
                                 <span class="description">Parse style</span><pre>parseStyle</pre>
                             </a>
@@ -186,6 +216,13 @@
                                                                                 <li class="method private">
                             <a href="#method_parseText" title="parseText :: Parse text node">
                                 <span class="description">Parse text node</span><pre>parseText</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method private">
+                            <a href="#method_recursiveParseStylesInHierarchy" title="recursiveParseStylesInHierarchy :: Recursively parses styles on parent nodes
+TODO if too slow, add caching of parent nodes, !! everything is static here so watch out for concurrency !!">
+                                <span class="description">Recursively parses styles on parent nodes
+TODO if too slow, add caching of parent nodes, !! everything is static here so watch out for concurrency !!</span><pre>recursiveParseStylesInHierarchy</pre>
                             </a>
                         </li>
                                                 </ul>
@@ -235,7 +272,7 @@
                                                                 <a id="method_addHtml"></a>
                         <div class="element clickable method public  method_addHtml" data-toggle="collapse" data-target=".method_addHtml .collapse">
                             <h2>Add HTML parts.</h2>
-                            <pre>addHtml(\PhpOffice\PhpWord\Element\AbstractContainer $element, string $html, boolean $fullHTML = false) : void</pre>
+                            <pre>addHtml(\PhpOffice\PhpWord\Element\AbstractContainer $element, string $html, boolean $fullHTML = false, boolean $preserveWhiteSpace = true) </pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -245,6 +282,13 @@
                                     <div class="long_description"><p>Note: $stylesheet parameter is removed to avoid PHPMD error for unused parameter</p></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -260,15 +304,19 @@
                                                 <h4>$fullHTML</h4>
                                                 <code>boolean</code><p><p>If it's a full HTML, no need to add 'body' tag</p></p>
                                             </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$preserveWhiteSpace</h4>
+                                                <code>boolean</code><p><p>If false, the whitespaces between nodes will be removed</p></p>
+                                            </div>
                                                                             
                                                                     </div>
                             </div>
 
                         </div>
-                                            <a id="method_parseChildNodes"></a>
-                        <div class="element clickable method private  method_parseChildNodes" data-toggle="collapse" data-target=".method_parseChildNodes .collapse">
-                            <h2>Parse child nodes.</h2>
-                            <pre>parseChildNodes(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element, array $styles, array $data) : void</pre>
+                                            <a id="method_mapBorderStyle"></a>
+                        <div class="element clickable method private  method_mapBorderStyle" data-toggle="collapse" data-target=".method_mapBorderStyle .collapse">
+                            <h2>Transforms a CSS border style into a word border style</h2>
+                            <pre>mapBorderStyle(string $cssBorderStyle) : null|string</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -278,6 +326,75 @@
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$cssBorderStyle</h4>
+                                                <code>string</code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>null|string</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_parseCell"></a>
+                        <div class="element clickable method private  method_parseCell" data-toggle="collapse" data-target=".method_parseCell .collapse">
+                            <h2>Parse table cell</h2>
+                            <pre>parseCell(\DOMNode $node, \PhpOffice\PhpWord\Element\Table $element,  &$styles) : \PhpOffice\PhpWord\Element\Cell</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$node</h4>
+                                                <code>\DOMNode</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$element</h4>
+                                                <code><a href="../classes/PhpOffice.PhpWord.Element.Table.html">\PhpOffice\PhpWord\Element\Table</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$styles</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/PhpOffice.PhpWord.Element.Cell.html">\PhpOffice\PhpWord\Element\Cell</a></code><p><p>$element</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_parseChildNodes"></a>
+                        <div class="element clickable method private  method_parseChildNodes" data-toggle="collapse" data-target=".method_parseChildNodes .collapse">
+                            <h2>Parse child nodes.</h2>
+                            <pre>parseChildNodes(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element, array $styles, array $data) </pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -347,6 +464,37 @@ Heading1 - Heading6 are already defined somewhere</p>
                             </div>
 
                         </div>
+                                            <a id="method_parseImage"></a>
+                        <div class="element clickable method private  method_parseImage" data-toggle="collapse" data-target=".method_parseImage .collapse">
+                            <h2>Parse image node</h2>
+                            <pre>parseImage(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element) : \PhpOffice\PhpWord\Element\Image</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$node</h4>
+                                                <code>\DOMNode</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$element</h4>
+                                                <code><a href="../classes/PhpOffice.PhpWord.Element.AbstractContainer.html">\PhpOffice\PhpWord\Element\AbstractContainer</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code><a href="../classes/PhpOffice.PhpWord.Element.Image.html">\PhpOffice\PhpWord\Element\Image</a></code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_parseInlineStyle"></a>
                         <div class="element clickable method protected  method_parseInlineStyle" data-toggle="collapse" data-target=".method_parseInlineStyle .collapse">
                             <h2>parse Inline style of a node</h2>
@@ -378,10 +526,10 @@ Heading1 - Heading6 are already defined somewhere</p>
                             </div>
 
                         </div>
-                                            <a id="method_parseList"></a>
-                        <div class="element clickable method private  method_parseList" data-toggle="collapse" data-target=".method_parseList .collapse">
-                            <h2>Parse list node</h2>
-                            <pre>parseList( &$styles,  &$data, string $argument1) : null</pre>
+                                            <a id="method_parseLineBreak"></a>
+                        <div class="element clickable method private  method_parseLineBreak" data-toggle="collapse" data-target=".method_parseLineBreak .collapse">
+                            <h2>Parse line break</h2>
+                            <pre>parseLineBreak(\PhpOffice\PhpWord\Element\AbstractContainer $element) </pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -391,6 +539,45 @@ Heading1 - Heading6 are already defined somewhere</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$element</h4>
+                                                <code><a href="../classes/PhpOffice.PhpWord.Element.AbstractContainer.html">\PhpOffice\PhpWord\Element\AbstractContainer</a></code><p></p>
+                                            </div>
+                                                                            
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_parseList"></a>
+                        <div class="element clickable method private  method_parseList" data-toggle="collapse" data-target=".method_parseList .collapse">
+                            <h2>Parse list node</h2>
+                            <pre>parseList( &$styles,  &$data, string $argument1) </pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -407,8 +594,6 @@ Heading1 - Heading6 are already defined somewhere</p>
                                                 <code>string</code><p><p>List type</p></p>
                                             </div>
                                                                             
-                                                                            <h3>Response</h3>
-                                        <code>null</code><p></p>
                                                                     </div>
                             </div>
 
@@ -416,7 +601,7 @@ Heading1 - Heading6 are already defined somewhere</p>
                                             <a id="method_parseListItem"></a>
                         <div class="element clickable method private  method_parseListItem" data-toggle="collapse" data-target=".method_parseListItem .collapse">
                             <h2>Parse list item node</h2>
-                            <pre>parseListItem(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element,  &$styles, array $data) : null</pre>
+                            <pre>parseListItem(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element,  &$styles, array $data) </pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -435,6 +620,13 @@ Heading1 - Heading6 are already defined somewhere</p>
                                                                                                                                                                         <p>This function is almost the same like <code>parseChildNodes</code>. Merged?</p>
                                                                                                                                                                         
                                                                                                                                                                         <p>As soon as ListItem inherits from AbstractContainer or TextRun delete parsing part of childNodes</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
                                                                                                     </td>
                                             </tr>
                                                                                                                     </table>
@@ -457,8 +649,6 @@ Heading1 - Heading6 are already defined somewhere</p>
                                                 <code>array</code><p></p>
                                             </div>
                                                                             
-                                                                            <h3>Response</h3>
-                                        <code>null</code><p></p>
                                                                     </div>
                             </div>
 
@@ -466,7 +656,7 @@ Heading1 - Heading6 are already defined somewhere</p>
                                             <a id="method_parseNode"></a>
                         <div class="element clickable method protected  method_parseNode" data-toggle="collapse" data-target=".method_parseNode .collapse">
                             <h2>Parse a node and add a corresponding element to the parent element.</h2>
-                            <pre>parseNode(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element, array $styles = array(), array $data = array()) : void</pre>
+                            <pre>parseNode(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element, array $styles = array(), array $data = array()) </pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -476,6 +666,13 @@ Heading1 - Heading6 are already defined somewhere</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -538,7 +735,7 @@ Heading1 - Heading6 are already defined somewhere</p>
                                             <a id="method_parseProperty"></a>
                         <div class="element clickable method private  method_parseProperty" data-toggle="collapse" data-target=".method_parseProperty .collapse">
                             <h2>Parse property node</h2>
-                            <pre>parseProperty( &$styles, string $argument1, string $argument2) : null</pre>
+                            <pre>parseProperty( &$styles, string $argument1, string $argument2) </pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -548,6 +745,13 @@ Heading1 - Heading6 are already defined somewhere</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -564,8 +768,77 @@ Heading1 - Heading6 are already defined somewhere</p>
                                                 <code>string</code><p><p>Style value</p></p>
                                             </div>
                                                                             
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_parseRow"></a>
+                        <div class="element clickable method private  method_parseRow" data-toggle="collapse" data-target=".method_parseRow .collapse">
+                            <h2>Parse a table row</h2>
+                            <pre>parseRow(\DOMNode $node, \PhpOffice\PhpWord\Element\Table $element,  &$styles) : \PhpOffice\PhpWord\Element\Row</pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$node</h4>
+                                                <code>\DOMNode</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$element</h4>
+                                                <code><a href="../classes/PhpOffice.PhpWord.Element.Table.html">\PhpOffice\PhpWord\Element\Table</a></code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$styles</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
                                                                             <h3>Response</h3>
-                                        <code>null</code><p></p>
+                                        <code><a href="../classes/PhpOffice.PhpWord.Element.Row.html">\PhpOffice\PhpWord\Element\Row</a></code><p><p>$element</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_parseSpan"></a>
+                        <div class="element clickable method private  method_parseSpan" data-toggle="collapse" data-target=".method_parseSpan .collapse">
+                            <h2>Parse span node</h2>
+                            <pre>parseSpan(\DOMNode $node,  &$styles) </pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$node</h4>
+                                                <code>\DOMNode</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$styles</h4>
+                                                <code></code><p></p>
+                                            </div>
+                                                                            
                                                                     </div>
                             </div>
 
@@ -604,7 +877,7 @@ Heading1 - Heading6 are already defined somewhere</p>
                                             <a id="method_parseTable"></a>
                         <div class="element clickable method private  method_parseTable" data-toggle="collapse" data-target=".method_parseTable .collapse">
                             <h2>Parse table node</h2>
-                            <pre>parseTable(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element,  &$styles, string $argument1) : \PhpOffice\PhpWord\Element\AbstractContainer</pre>
+                            <pre>parseTable(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element,  &$styles) : \PhpOffice\PhpWord\Element\Table</pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -638,13 +911,9 @@ Heading1 - Heading6 are already defined somewhere</p>
                                                 <h4>$styles</h4>
                                                 <code></code><p></p>
                                             </div>
-                                                                                    <div class="subelement argument">
-                                                <h4>$argument1</h4>
-                                                <code>string</code><p><p>Method name</p></p>
-                                            </div>
                                                                             
                                                                             <h3>Response</h3>
-                                        <code><a href="../classes/PhpOffice.PhpWord.Element.AbstractContainer.html">\PhpOffice\PhpWord\Element\AbstractContainer</a></code><p><p>$element</p></p>
+                                        <code><a href="../classes/PhpOffice.PhpWord.Element.Table.html">\PhpOffice\PhpWord\Element\Table</a></code><p><p>$element</p></p>
                                                                     </div>
                             </div>
 
@@ -652,7 +921,7 @@ Heading1 - Heading6 are already defined somewhere</p>
                                             <a id="method_parseText"></a>
                         <div class="element clickable method private  method_parseText" data-toggle="collapse" data-target=".method_parseText .collapse">
                             <h2>Parse text node</h2>
-                            <pre>parseText(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element,  &$styles) : null</pre>
+                            <pre>parseText(\DOMNode $node, \PhpOffice\PhpWord\Element\AbstractContainer $element,  &$styles) </pre>
                             <div class="labels">
                                                                 <span class="label">static</span>                                                                                                                            </div>
 
@@ -662,6 +931,13 @@ Heading1 - Heading6 are already defined somewhere</p>
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -678,8 +954,43 @@ Heading1 - Heading6 are already defined somewhere</p>
                                                 <code></code><p></p>
                                             </div>
                                                                             
-                                                                            <h3>Response</h3>
-                                        <code>null</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_recursiveParseStylesInHierarchy"></a>
+                        <div class="element clickable method private  method_recursiveParseStylesInHierarchy" data-toggle="collapse" data-target=".method_recursiveParseStylesInHierarchy .collapse">
+                            <h2>Recursively parses styles on parent nodes
+TODO if too slow, add caching of parent nodes, !! everything is static here so watch out for concurrency !!</h2>
+                            <pre>recursiveParseStylesInHierarchy(\DOMNode $node, array $style) </pre>
+                            <div class="labels">
+                                                                <span class="label">static</span>                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$node</h4>
+                                                <code>\DOMNode</code><p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$style</h4>
+                                                <code>array</code><p></p>
+                                            </div>
+                                                                            
                                                                     </div>
                             </div>
 
@@ -706,7 +1017,7 @@ Heading1 - Heading6 are already defined somewhere</p>
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Tue, 11 Jul 2017 00:28:57 +0000.<br/>
+            generated on Mon, 25 Dec 2017 00:56:54 +0000.<br/>
     </footer>
     </body>
 </html>

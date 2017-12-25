@@ -143,7 +143,7 @@
         </a>
     </li>
 
-                                                                                                                                                                                                                        </ul>
+                                                                                                                                                                                                                                                                                </ul>
         </li>
         <li class="nav-header protected">» Protected
             <ul>
@@ -155,6 +155,11 @@
                                                                                                                                                                                                                                                                     <li class="method protected inherited">
                             <a href="#method_writeRels" title="writeRels :: Write relationships.">
                                 <span class="description">Write relationships.</span><pre>writeRels</pre>
+                            </a>
+                        </li>
+                                                                                <li class="method protected inherited">
+                            <a href="#method_writeText" title="writeText :: Write an XML text, this will call text() or writeRaw() depending on the value of Settings::isOutputEscapingEnabled()">
+                                <span class="description">Write an XML text, this will call text() or writeRaw() depending on the value of Settings::isOutputEscapingEnabled()</span><pre>writeText</pre>
                             </a>
                         </li>
                                                 </ul>
@@ -171,7 +176,7 @@
                                 <span class="description">Write individual rels entry.</span><pre>writeRel</pre>
                             </a>
                         </li>
-                                                                                    </ul>
+                                                                                                                        </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -313,7 +318,7 @@
                                             <a id="method_setParentWriter"></a>
                         <div class="element clickable method public  method_setParentWriter inherited" data-toggle="collapse" data-target=".method_setParentWriter .collapse">
                             <h2>Set parent writer.</h2>
-                            <pre>setParentWriter(\PhpOffice\PhpWord\Writer\AbstractWriter $writer = null) : void</pre>
+                            <pre>setParentWriter(\PhpOffice\PhpWord\Writer\AbstractWriter $writer = null) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -323,6 +328,13 @@
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -367,7 +379,7 @@
                                             <a id="method_writeMediaRel"></a>
                         <div class="element clickable method private  method_writeMediaRel inherited" data-toggle="collapse" data-target=".method_writeMediaRel .collapse">
                             <h2>Write media relationships.</h2>
-                            <pre>writeMediaRel(\PhpOffice\Common\XMLWriter $xmlWriter, integer $relId, array $mediaRel) : void</pre>
+                            <pre>writeMediaRel(\PhpOffice\Common\XMLWriter $xmlWriter, integer $relId, array $mediaRel) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -377,6 +389,13 @@
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -400,7 +419,7 @@
                                             <a id="method_writeRel"></a>
                         <div class="element clickable method private  method_writeRel inherited" data-toggle="collapse" data-target=".method_writeRel .collapse">
                             <h2>Write individual rels entry.</h2>
-                            <pre>writeRel(\PhpOffice\Common\XMLWriter $xmlWriter, integer $relId, string $type, string $target, string $targetMode = &#039;&#039;) : void</pre>
+                            <pre>writeRel(\PhpOffice\Common\XMLWriter $xmlWriter, integer $relId, string $type, string $target, string $targetMode = &#039;&#039;) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -411,6 +430,13 @@
 <Relationship Id="rId..." Type="http://..." Target="....xml" TargetMode="..." /></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                             <tr>
                                                 <th>Throws</th>
                                                 <td>
@@ -451,7 +477,7 @@
                                             <a id="method_writeRels"></a>
                         <div class="element clickable method protected  method_writeRels inherited" data-toggle="collapse" data-target=".method_writeRels .collapse">
                             <h2>Write relationships.</h2>
-                            <pre>writeRels(\PhpOffice\Common\XMLWriter $xmlWriter, array $xmlRels = array(), array $mediaRels = array(), integer $relId = 1) : void</pre>
+                            <pre>writeRels(\PhpOffice\Common\XMLWriter $xmlWriter, array $xmlRels = array(), array $mediaRels = array(), integer $relId = 1) </pre>
                             <div class="labels">
                                 <span class="label">inherited</span>                                                                                                                                                            </div>
 
@@ -461,6 +487,13 @@
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
                                                                                                                     </table>
 
                                                                             <h3>Arguments</h3>
@@ -481,6 +514,33 @@
                                                 <code>integer</code><p></p>
                                             </div>
                                                                             
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_writeText"></a>
+                        <div class="element clickable method protected  method_writeText inherited" data-toggle="collapse" data-target=".method_writeText .collapse">
+                            <h2>Write an XML text, this will call text() or writeRaw() depending on the value of Settings::isOutputEscapingEnabled()</h2>
+                            <pre>writeText(string $content) : boolean</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                                                    </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$content</h4>
+                                                <code>string</code><p><p>The text string to write</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>boolean</code><p><p>Returns true on success or false on failure</p></p>
                                                                     </div>
                             </div>
 
@@ -586,7 +646,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Tue, 11 Jul 2017 00:28:53 +0000.<br/>
+            generated on Mon, 25 Dec 2017 00:56:52 +0000.<br/>
     </footer>
     </body>
 </html>

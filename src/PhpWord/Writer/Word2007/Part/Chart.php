@@ -41,11 +41,11 @@ class Chart extends AbstractPart
      * @var array
      */
     private $types = array(
-        'pie'       => array('type' => 'pie', 'colors' => 1),
+        'pie'       => array('type' => 'pie', 'colors' => 1, 'enableLegend' => true),
         'doughnut'  => array('type' => 'doughnut', 'colors' => 1, 'hole' => 75, 'no3d' => true),
         'bar'       => array('type' => 'bar', 'colors' => 0, 'axes' => true, 'bar' => 'bar'),
         'column'    => array('type' => 'bar', 'colors' => 0, 'axes' => true, 'bar' => 'col'),
-        'line'      => array('type' => 'line', 'colors' => 0, 'axes' => true),
+        'line'      => array('type' => 'line', 'colors' => 0, 'axes' => true, 'enableLegend' => true),
         'area'      => array('type' => 'area', 'colors' => 0, 'axes' => true),
         'radar'     => array('type' => 'radar', 'colors' => 0, 'axes' => true, 'radar' => 'standard', 'no3d' => true),
         'scatter'   => array('type' => 'scatter', 'colors' => 0, 'axes' => true, 'scatter' => 'marker', 'no3d' => true),
@@ -105,7 +105,22 @@ class Chart extends AbstractPart
 
         $this->writePlotArea($xmlWriter);
 
+        $this->enableLegend($xmlWriter);
+
         $xmlWriter->endElement(); // c:chart
+    }
+
+    /**
+     * @param XMLWriter $xmlWriter
+     */
+    private function enableLegend(XMLWriter $xmlWriter)
+    {
+        if (isset($this->options['enableLegend']) && $this->options['enableLegend']) {
+            $xmlWriter->writeRaw('<c:legend>
+                                <c:legendPos val="b"/>
+                                <c:overlay val="0"/>
+                            </c:legend>');
+        }
     }
 
     /**
@@ -188,6 +203,7 @@ class Chart extends AbstractPart
         foreach ($series as $seriesItem) {
             $categories = $seriesItem['categories'];
             $values = $seriesItem['values'];
+            $name = isset($seriesItem['name']) ? $seriesItem['name'] : null;
 
             $xmlWriter->startElement('c:ser');
 
@@ -202,7 +218,7 @@ class Chart extends AbstractPart
                 $this->writeSeriesItem($xmlWriter, 'xVal', $categories);
                 $this->writeSeriesItem($xmlWriter, 'yVal', $values);
             } else {
-                $this->writeSeriesItem($xmlWriter, 'cat', $categories);
+                $this->writeSeriesItem($xmlWriter, 'cat', $categories, $name);
                 $this->writeSeriesItem($xmlWriter, 'val', $values);
             }
 
@@ -217,8 +233,9 @@ class Chart extends AbstractPart
      * @param \PhpOffice\Common\XMLWriter $xmlWriter
      * @param string $type
      * @param array $values
+     * @param string|null $name
      */
-    private function writeSeriesItem(XMLWriter $xmlWriter, $type, $values)
+    private function writeSeriesItem(XMLWriter $xmlWriter, $type, $values, $name = null)
     {
         $types = array(
             'cat'  => array('c:cat', 'c:strLit'),
@@ -227,6 +244,21 @@ class Chart extends AbstractPart
             'yVal' => array('c:yVal', 'c:numLit'),
         );
         list($itemType, $itemLit) = $types[$type];
+
+        if (null !== $name) {
+            $seriesName = '
+                                          <c:tx>
+                                            <c:strRef>
+                                              <c:strCache>
+                                                <c:ptCount val="1"/>
+                                                <c:pt idx="0">
+                                                  <c:v>' . $name . '</c:v>
+                                                </c:pt>
+                                              </c:strCache>
+                                            </c:strRef>
+                                          </c:tx>';
+            $xmlWriter->writeRaw($seriesName);
+        }
 
         $xmlWriter->startElement($itemType);
         $xmlWriter->startElement($itemLit);

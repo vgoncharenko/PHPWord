@@ -41,7 +41,7 @@ class Chart extends AbstractPart
      * @var array
      */
     private $types = array(
-        'pie'       => array('type' => 'pie', 'colors' => 1, 'enableLegend' => true, 'showLabels'),
+        'pie'       => array('type' => 'pie', 'colors' => 1, 'enableLegend' => true, 'showLabels' => true),
         'doughnut'  => array('type' => 'doughnut', 'colors' => 1, 'hole' => 75, 'no3d' => true),
         'bar'       => array('type' => 'bar', 'colors' => 0, 'axes' => true, 'bar' => 'bar'),
         'column'    => array('type' => 'bar', 'colors' => 0, 'axes' => true, 'bar' => 'col'),

@@ -67,6 +67,16 @@ class Chart extends AbstractStyle
     private $gridX = false;
 
     /**
+     * @var int
+     */
+    private $yRotation = 30;
+
+    /**
+     * @var bool
+     */
+    private $showLabels = false;
+
+    /**
      * Create a new instance
      *
      * @param array $style
@@ -212,5 +222,43 @@ class Chart extends AbstractStyle
         $this->gridX = $this->setBoolVal($value, $this->gridX);
 
         return $this;
+    }
+
+    /**
+     * @param $value
+     * @return $this
+     */
+    public function setYRotation($value)
+    {
+        $this->yRotation = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return int
+     */
+    public function getYRotation()
+    {
+        return $this->yRotation;
+    }
+
+    /**
+     * @param $value
+     * @return $this
+     */
+    public function setShowLabels($value)
+    {
+        $this->showLabels = $value;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isShowLabels()
+    {
+        return $this->showLabels;
     }
 }

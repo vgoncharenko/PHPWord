@@ -41,7 +41,7 @@ class Chart extends AbstractPart
      * @var array
      */
     private $types = array(
-        'pie'       => array('type' => 'pie', 'colors' => 1, 'enableLegend' => true),
+        'pie'       => array('type' => 'pie', 'colors' => 1, 'enableLegend' => true, 'showLabels'),
         'doughnut'  => array('type' => 'doughnut', 'colors' => 1, 'hole' => 75, 'no3d' => true),
         'bar'       => array('type' => 'bar', 'colors' => 0, 'axes' => true, 'bar' => 'bar'),
         'column'    => array('type' => 'bar', 'colors' => 0, 'axes' => true, 'bar' => 'col'),
@@ -103,6 +103,8 @@ class Chart extends AbstractPart
 
         $xmlWriter->writeElementBlock('c:autoTitleDeleted', 'val', 1);
 
+        $this->write3DView($xmlWriter);
+
         $this->writePlotArea($xmlWriter);
 
         $this->enableLegend($xmlWriter);
@@ -113,8 +115,29 @@ class Chart extends AbstractPart
     /**
      * @param XMLWriter $xmlWriter
      */
+    private function write3DView(XMLWriter $xmlWriter)
+    {
+        $type = $this->element->getType();
+        $style = $this->element->getStyle();
+        $this->options = $this->types[$type];
+
+        if ($style->is3d() && !isset($this->options['no3d'])) {
+            $xmlWriter->writeRaw('<c:view3D>
+                                    <c:rotX val="' . $style->getYRotation() . '" />
+                                    <c:rotY val="0" />
+                                    <c:depthPercent val="100" />
+                                    <c:rAngAx val="0" />
+                                  </c:view3D>');
+        }
+    }
+
+    /**
+     * @param XMLWriter $xmlWriter
+     */
     private function enableLegend(XMLWriter $xmlWriter)
     {
+        $type = $this->element->getType();
+        $this->options = $this->types[$type];
         if (isset($this->options['enableLegend']) && $this->options['enableLegend']) {
             $xmlWriter->writeRaw('<c:legend>
                                 <c:legendPos val="b"/>
@@ -150,6 +173,36 @@ class Chart extends AbstractPart
         $chartType .= $style->is3d() && !isset($this->options['no3d']) ? '3D' : '';
         $chartType .= 'Chart';
         $xmlWriter->startElement("c:{$chartType}");
+
+        if(isset($this->options['showLabels']) && $style->isShowLabels()) {
+            $xmlWriter->writeRaw('<c:dLbls>
+                                    <c:txPr>
+                                        <a:bodyPr wrap="square" lIns="38100" tIns="19050" rIns="38100" bIns="19050"
+                                                  anchor="ctr">
+                                            <a:spAutoFit />
+                                        </a:bodyPr>
+                                        <a:lstStyle />
+                                        <a:p>
+                                            <a:pPr>
+                                                <a:defRPr>
+                                                    <a:solidFill>
+                                                        <a:srgbClr val="D9D9D9" />
+                                                    </a:solidFill>
+                                                </a:defRPr>
+                                            </a:pPr>
+                                            <a:endParaRPr lang="en-US" />
+                                        </a:p>
+                                    </c:txPr>
+                                    <c:dLblPos val="ctr" />
+                                    <c:showLegendKey val="0" />
+                                    <c:showVal val="0" />
+                                    <c:showCatName val="0" />
+                                    <c:showSerName val="0" />
+                                    <c:showPercent val="1" />
+                                    <c:showBubbleSize val="0" />
+                                    <c:showLeaderLines val="1" />
+                                </c:dLbls>');
+        }
 
         $xmlWriter->writeElementBlock('c:varyColors', 'val', $this->options['colors']);
         if ($type == 'area') {
